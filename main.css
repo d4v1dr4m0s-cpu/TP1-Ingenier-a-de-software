@@ -1,0 +1,30 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 50px;
+}
+
+
+input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+
+#buscar {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
