@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset='utf-8'>
+    <title>CCRP - Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <img src="25Años.png" alt="logo" height="150">
+</head>
+<body>
+    <h1>Hola!</h1>
+    <hr>
+    <br>
+    <h3>Contanos más sobre tu trabajo</h3>
+    <form action="home_logged.html">
+        <label for="campo_nombre">Nombre</label>
+        <br>
+        <input id="campo_nombre" name="nombre" type="text">
+        <br>
+        <br>
+        <label for="campo_categoria">Categoría</label>
+        <br>
+        <input id="campo_categoria" name="categoria" type="text">
+        <br>
+        <br>
+        <label for="campo_horario">Horario</label>
+        <br>
+        <input id="campo_horario" name="horario" type="text">
+        <br>
+        <br>
+        <label for="campo_direccion">Dirección</label>
+        <br>
+        <input id="campo_direccion" name="direccion" type="text">
+        <br>
+        <br>
+        <label for="campo_Descripción">Descripción</label>
+        <br>
+        <textarea id="campo_descripcion" name="descripcion" cols="30" rows="10"></textarea>
+        <br>
+        <br>
+        <input type="checkbox" id="Captcha" name="Captcha" >
+        <label for="Captcha">No soy un Robot</label>
+        <br>
+        <br>
+        <button type="submit">Enviar solicitud</button>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
