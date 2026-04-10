@@ -18,13 +18,13 @@ var marcador3 = L.marker([-34.5195313348882, -58.70097960839921]).addTo(map);
 marcador3.bindPopup("Clases de violin <br> Miercoles y Jueves <br> 18:30 a 20:30 <br> Tte. General Ricchieri 422 ").openPopup();
 
 var marcador4 = L.marker([-34.524944276182545, -58.70478799763984]).addTo(map);
-marcador4.bindPopup("Feria de los artesanos <br> Jueves 10 a 28hs <br> Juan M. Gutierrez 1050").openPopup();
+marcador4.bindPopup("Feria de los artesanos <br> Jueves 10 a 20hs <br> Juan M. Gutierrez 1050").openPopup();
 
 var marcador5 = L.marker([-34.5211940078788, -58.705061109220665]).addTo(map);
 marcador5.bindPopup("Clases de canto <br> Jueves y Sabados <br> 9 a 11hs <br> La Plata 1724").openPopup();
 
 var marcador6 = L.marker([-34.51704768237736, -58.69776139373766]).addTo(map);
-marcador6.bindPopup("Luthier <br> Lunes a Sabados <br> 8 a 17hs <br> Dorrego 149").openPopup();
+marcador6.bindPopup("Luthier de guitarra <br> Lunes a Sabados <br> 8 a 17hs <br> Dorrego 149").openPopup();
 
 var marcador7 = L.marker([-34.52798998002709, -58.70788689806816]).addTo(map);
 marcador7.bindPopup("Clases de dibujo <br> Miercoles 17 a 20hs <br> Altube 4839").openPopup();
