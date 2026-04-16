@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <!-- cargo css de leaflet -->
     <title>Mapa de talleres</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
-
-    <!-- cargo javascript de leaflet -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-
-    <div id="map"></div>
-
-    <!-- linkeo el script y css -->
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="mapa.css">
-    <script src="mapa.js"></script>
-
 </head>
-
 <body>
-    <div>
-        <input type="text" name="barra_buscar" id="barra_buscador" size="80px">
-
-        <button type="button">Buscar</button>
+    <div class="buscador-container">
+        <input type="text" id="barra_buscador" placeholder="Ingrese el taller o servicio (ej: guitarra)">
+        <button type="button" id="btnBuscar">Buscar</button>
+        <button type="button" onclick="window.location.href='home_logged.html'" style="background-color: #6c757d; color: white;">Volver</button>
     </div>
-</body>
 
+    <div id="map" style="height: 500px; width: 100%; margin-top: 20px;"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="mapa.js"></script>
+</body>
 </html>

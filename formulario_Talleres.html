@@ -1,49 +1,85 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
+
 <head>
-    <meta charset='utf-8'>
     <title>CCRP - Formulario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="main.css">
     <img src="25Años.png" alt="logo" height="150">
 </head>
+
 <body>
-    <h1>Hola!</h1>
-    <hr>
-    <br>
-    <h3>Contanos más sobre tu trabajo</h3>
-    <form action="home_logged.html">
-        <label for="campo_nombre">Nombre</label>
-        <br>
-        <input id="campo_nombre" name="nombre" type="text">
-        <br>
-        <br>
-        <label for="campo_categoria">Categoría</label>
-        <br>
-        <input id="campo_categoria" name="categoria" type="text">
-        <br>
-        <br>
-        <label for="campo_horario">Horario</label>
-        <br>
-        <input id="campo_horario" name="horario" type="text">
-        <br>
-        <br>
-        <label for="campo_direccion">Dirección</label>
-        <br>
-        <input id="campo_direccion" name="direccion" type="text">
-        <br>
-        <br>
-        <label for="campo_Descripción">Descripción</label>
-        <br>
-        <textarea id="campo_descripcion" name="descripcion" cols="30" rows="10"></textarea>
-        <br>
-        <br>
-        <input type="checkbox" id="Captcha" name="Captcha" >
-        <label for="Captcha">No soy un Robot</label>
-        <br>
-        <br>
-        <button type="submit">Enviar solicitud</button>
-    </form>
+    <div class="contenedor-registro">
+        <h1>Inscripción de Miembro y Taller</h1>
+        <hr>
+
+        <form action="#" id="form_registro">
+            <h2>Datos del colaborador</h2>
+
+            <div class="campo">
+                <label for="campo_nombre">Nombre Completo</label>
+                <input id="campo_nombre" name="nombre" type="text" placeholder="Ej: Juan Pérez">
+            </div>
+
+            <div class="campo">
+                <label for="campo_telefono">Telefono</label>
+                <input id="campo_telefono" name="telefono" type="text" placeholder="Ej: 1156607623">
+            </div>
+
+            <div class="campo">
+                <label for="campo_correo">Correo Electrónico</label>
+                <input id="campo_correo" name="correo" type="email" placeholder="ejemplo@mail.com">
+            </div>
+
+            <hr>
+            <h2>Datos del Taller</h2>
+
+            <div class="campo">
+                <label for="taller_nombre">Nombre del Espacio</label>
+                <input id="taller_nombre" name="taller_nombre" type="text">
+            </div>
+
+            <div class="campo">
+                <label for="campo_descripcion">Descripción General</label>
+                <textarea id="campo_descripcion" name="descripcion" rows="3"
+                    placeholder="Contanos de qué trata el taller..."></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="campo_redes">Redes Sociales / Contacto</label>
+                <input id="campo_redes" name="redes" type="text" placeholder="@instagram">
+            </div>
+
+            <div class="campo">
+                <label for="campo_foto">Foto Principal o Logotipo</label>
+                <input id="campo_foto" name="foto" type="file" accept="image/*">
+            </div>
+
+            <div class="campo-checkbox">
+                <input type="checkbox" id="es_sede" name="es_sede">
+                <label for="es_sede">¿Es en la sede del Centro Cultural?</label>
+            </div>
+
+            <div class="campo">
+                <label for="campo_direccion">Dirección</label>
+                <textarea name="campo_direccion" id="direccion" rows="3"></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="campo_horario">Dirección</label>
+                <textarea name="campo_horario" id="horario" rows="3"></textarea>
+            </div>
+
+            <input type="checkbox" id="Captcha" name="Captcha" >
+            <label for="Captcha">No soy un Robot</label>
+            <input type="submit" value="Enviar Solicitud" id="btnFinalizar">
+            <button id="btnVolver">Volver al Inicio</button>
+
+
+        </form>
+    </div>
+
     <script src="main.js"></script>
 </body>
+
 </html>

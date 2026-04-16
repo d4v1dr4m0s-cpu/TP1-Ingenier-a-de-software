@@ -7,30 +7,48 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-//marcadores
-var marcador1 = L.marker([-34.54050552908683, -58.717209061013484]).addTo(map);
-marcador1.bindPopup("Clases de guitarra <br> Lun 19 a 20hs <br> Julio A. Roca").openPopup();
+const talleres = [
+    { nombre: "Taller de guitarra", info: "Lun 19 a 20hs <br> Julio A. Roca", tel: "11-9988-7766",img: "https://www.elvalleonline.com.ar/wp-content/uploads/2024/03/taller-guitarra-trelew-2-e1709642049198.jpeg",redes:"@guitarraIg",coords: [-34.540505, -58.717209] },
+    { nombre: "Taller de carpinteria Artesanal", info: "De lunes a sabados <br> 9 a 16hs <br> Paunero 1848",tel: "11-9988-7766", coords: [-34.539050, -58.714661] },
+    { nombre: "Clases de violin", info: "Miercoles y Jueves <br> 18:30 a 20:30 <br> Tte. General Ricchieri 422",tel: "11-9988-7766", coords: [-34.519531, -58.700979] },
+    { nombre: "Feria de los artesanos", info: "Jueves 10 a 20hs <br> Juan M. Gutierrez 1050",tel: "11-9988-7766", coords: [-34.524944, -58.704787] },
+    { nombre: "Clases de canto", info: "Jueves y Sabados <br> 9 a 11hs <br> La Plata 1724",tel: "11-9988-7766", coords: [-34.521194, -58.705061] },
+    { nombre: "Luthier de guitarra", info: "Lunes a Sabados <br> 8 a 17hs <br> Dorrego 149",tel: "11-9988-7766", coords: [-34.517047, -58.697761] },
+    { nombre: "Clases de dibujo", info: "Miercoles 17 a 20hs <br> Altube 4839",tel: "11-9988-7766", coords: [-34.527989, -58.707886] },
+    { nombre: "Clases de guitarra", info: "Martes 21 a 22hs <br> Concejal acosta 637",tel: "11-9988-7766", coords: [-34.556901, -58.684664] },
+    { nombre: "Clases de canto", info: "Martes y Viernes 20 a 21hs <br> Tte richieri 422",tel: "11-9988-7766", coords: [-34.558174, -58.691956] }
+];
 
-var marcador2 = L.marker([-34.53905072461418, -58.71466129730134]).addTo(map);
-marcador2.bindPopup("Maderera Artesanal <br> De lunes a sabados <br> 9 a 16hs <br> Paunero 1848").openPopup();
+var marcadoresEnPantalla = L.layerGroup().addTo(map);
 
-var marcador3 = L.marker([-34.5195313348882, -58.70097960839921]).addTo(map);
-marcador3.bindPopup("Clases de violin <br> Miercoles y Jueves <br> 18:30 a 20:30 <br> Tte. General Ricchieri 422 ").openPopup();
+function filtrarTalleres() {
+    var criterio = document.getElementById("barra_buscador").value.toLowerCase();
+    marcadoresEnPantalla.clearLayers();
 
-var marcador4 = L.marker([-34.524944276182545, -58.70478799763984]).addTo(map);
-marcador4.bindPopup("Feria de los artesanos <br> Jueves 10 a 20hs <br> Juan M. Gutierrez 1050").openPopup();
+    let encontrado = false;
 
-var marcador5 = L.marker([-34.5211940078788, -58.705061109220665]).addTo(map);
-marcador5.bindPopup("Clases de canto <br> Jueves y Sabados <br> 9 a 11hs <br> La Plata 1724").openPopup();
+    talleres.forEach(function(t) {
+        if (t.nombre.toLowerCase().includes(criterio)) {
+            var contenidoPopup = `
+                <div style="text-align:center;">
+                    <img src="${t.img}" style="width:100%; border-radius:5px;"><br>
+                    <strong style="font-size:16px;">${t.nombre}</strong><br>
+                    <p>🕒 ${t.info}<br>
+                    📞 ${t.tel}<br>
+                    📱 ${t.redes}</p>
+                </div>
+            `;
 
-var marcador6 = L.marker([-34.51704768237736, -58.69776139373766]).addTo(map);
-marcador6.bindPopup("Luthier de guitarra <br> Lunes a Sabados <br> 8 a 17hs <br> Dorrego 149").openPopup();
+            var m = L.marker(t.coords).bindPopup(contenidoPopup);
+            marcadoresEnPantalla.addLayer(m);
 
-var marcador7 = L.marker([-34.52798998002709, -58.70788689806816]).addTo(map);
-marcador7.bindPopup("Clases de dibujo <br> Miercoles 17 a 20hs <br> Altube 4839").openPopup();
+            // "Centrar en el mapa" si hay coincidencia exacta o es la primera
+            if (!encontrado) {
+                map.flyTo(t.coords, 16); // Hace el efecto de zoom suave
+                encontrado = true;
+            }
+        }
+    });
+}
 
-var marcador8 = L.marker([-34.556901126195065, -58.68466428160185]).addTo(map);
-marcador8.bindPopup("Clases de guitarra <br> Martes 21 a 22hs <br> Concejal acosta 637").openPopup();
-
-var marcador9 = L.marker([-34.558174218987055, -58.69195694830966]).addTo(map);
-marcador9.bindPopup("Clases de canto <br> Martes y Viernes 20 a 21hs <br> Tte richieri 422").openPopup();
+document.getElementById("btnBuscar").onclick = filtrarTalleres;

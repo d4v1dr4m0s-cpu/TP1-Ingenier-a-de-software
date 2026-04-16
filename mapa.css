@@ -2,3 +2,39 @@
     height: 700px;
     width: 1100px;
 }
+
+.buscador-container {
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#barra_buscador {
+    padding: 10px;
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+#btnBuscar, .btn-volver {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btnBuscar:hover, .btn-volver:hover {
+    background-color: #0056b3;
+}
+
+
