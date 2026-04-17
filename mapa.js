@@ -52,3 +52,20 @@ function filtrarTalleres() {
 }
 
 document.getElementById("btnBuscar").onclick = filtrarTalleres;
+
+talleres.forEach(taller => {
+
+    const lista = document.getElementById("lista-talleres");
+    const item = document.createElement("li");
+
+    item.innerHTML = `
+    <div class="tarjeta">
+      <h2>${taller.nombre}</h2>
+      <p>${taller.info}</p>
+    </div>
+  `;
+
+  lista.appendChild(item);
+});
+
+cargarDatos()

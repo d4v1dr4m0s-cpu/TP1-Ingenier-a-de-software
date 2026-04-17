@@ -1,6 +1,5 @@
-#map {
-    height: 700px;
-    width: 1100px;
+.mapa-talleres {
+    display: flex;
 }
 
 .buscador-container {
@@ -22,7 +21,6 @@
     border-radius: 5px;
 }
 
-
 #btnBuscar, .btn-volver {
     background-color: #007bff;
     color: white;
@@ -35,6 +33,36 @@
 
 #btnBuscar:hover, .btn-volver:hover {
     background-color: #0056b3;
+}
+
+#lista-talleres {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.tarjeta {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.tarjeta h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.tarjeta p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.tarjeta:hover {
+  transform: scale(1.03);
 }
 
 
