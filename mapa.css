@@ -3,6 +3,7 @@
 }
 
 .buscador-container {
+    display: flex;
     background-color: white;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -65,14 +66,7 @@
   transform: scale(1.03);
 }
 
-.card {
-  width: 200px;
-  height: 120px;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 10px;
-  background-color: lightgray;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.talleres-container {
+  float: left;
 }
 

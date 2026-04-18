@@ -44,9 +44,9 @@ function filtrarTalleres(criterio) {
             marcadoresEnPantalla.addLayer(m);
 
             // asociar marcador a tarjeta
-            /*m.on("click", function() {
-                cargarDatosFiltro(t.nombre.toLocaleLowerCase());
-            })*/
+            /* m.on("click", function () {
+                 cargarDatosFiltro(t.nombre.toLocaleLowerCase());
+             })*/
 
             // "Centrar en el mapa" si hay coincidencia exacta o es la primera
             if (!encontrado) {
@@ -108,5 +108,4 @@ buscador.addEventListener("input", () => {
 //por defecto muestro todo
 filtrarTalleres("");
 cargarDatosFiltro("");
-
 
