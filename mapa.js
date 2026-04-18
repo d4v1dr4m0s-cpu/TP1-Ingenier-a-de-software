@@ -21,16 +21,21 @@ const talleres = [
 
 var marcadoresEnPantalla = L.layerGroup().addTo(map);
 
-let buscador = document.getElementById("barra_buscador"); //criterio a usar en los filtros
+//Devuelve un array con los elementos filtrados por nombre
+function filtrarLista(criterio) {
+    return talleres.filter(taller =>  //filter() crea un nuevo array con los elementos que cumplan
+        taller.nombre.toLowerCase().includes(criterio.toLocaleLowerCase())
+    )
+}
 
-function filtrarTalleres(criterio) {
+//Crea los marcadores tomando un array de los talleres filtrados como parametro
+function crearMarcadores(listaFiltrada) {
 
     marcadoresEnPantalla.clearLayers();
     let encontrado = false;
 
-    talleres.forEach(function (t) {
-        if (t.nombre.toLowerCase().includes(criterio)) {
-            var contenidoPopup = `
+    listaFiltrada.forEach(function (t) {
+        var contenidoPopup = `
                 <div style="text-align:center;">
                     <img src="${t.img}" style="width:100%; border-radius:5px;"><br>
                     <strong style="font-size:16px;">${t.nombre}</strong><br>
@@ -40,72 +45,57 @@ function filtrarTalleres(criterio) {
                 </div>
             `;
 
-            var m = L.marker(t.coords).bindPopup(contenidoPopup);
-            marcadoresEnPantalla.addLayer(m);
+        var m = L.marker(t.coords).bindPopup(contenidoPopup);
+        marcadoresEnPantalla.addLayer(m);
 
-            // asociar marcador a tarjeta
-            /* m.on("click", function () {
-                 cargarDatosFiltro(t.nombre.toLocaleLowerCase());
-             })*/
-
-            // "Centrar en el mapa" si hay coincidencia exacta o es la primera
-            if (!encontrado) {
-                map.flyTo(t.coords, 16); // Hace el efecto de zoom suave
-                encontrado = true;
-            }
+        // "Centrar en el mapa" si hay coincidencia exacta o es la primera
+        if (!encontrado) {
+            map.flyTo(t.coords, 16); // Hace el efecto de zoom suave
+            encontrado = true;
         }
+
     });
 }
 
-
-//document.getElementById("btnBuscar").onclick = filtrarTalleres(buscador.value);
-
-
-//muestra los marcadores cuando apretas buscar
-document.getElementById("btnBuscar").onclick = function () {
-    filtrarTalleres(buscador.value);
-};
-
-
-function cargarDatosFiltro(filtro) {
+//Crea los marcadores tomando un array de los talleres filtrados como parametro
+function crearTarjetas(listaFiltrada) {
 
     const lista = document.getElementById("lista-talleres");
     lista.innerHTML = "";
 
-    talleres.forEach(taller => {
+    listaFiltrada.forEach(taller => {
 
-        if (taller.nombre.toLowerCase().includes(filtro.toLowerCase())) {
+        const item = document.createElement("li");
 
-            const item = document.createElement("li");
-
-            item.innerHTML = `
+        item.innerHTML = `
         <div class="tarjeta">
         <h2>${taller.nombre}</h2>
         <p>${taller.info}</p>
         </div>
         `;
-            // obtengo tarjeta creada
-            const tarjeta = item.querySelector(".tarjeta");
 
-            // agrego evento click
-            tarjeta.addEventListener("click", function () {
-                // asocio tarjeta a marcador
-                filtrarTalleres(taller.nombre.toLocaleLowerCase());
-            });
+        lista.appendChild(item);
 
-            lista.appendChild(item);
-        }
     });
 }
 
-buscador.addEventListener("input", () => {
-    cargarDatosFiltro(buscador.value);
+//por defecto muestro todo
+crearMarcadores(talleres);
+crearTarjetas(talleres);
 
-    //muestra los marcadores antes de apretar buscar(a medida que escribis)    
-    //    filtrarTalleres(buscador.value);
+//criterio a usar en los filtros
+let buscador = document.getElementById("barra_buscador");
+
+//evento a medida que escirbis
+buscador.addEventListener("input", () => {
+    const talleresfiltrados = filtrarLista(buscador.value);
+    crearTarjetas(talleresfiltrados);
+    crearMarcadores(talleresfiltrados);
 })
 
-//por defecto muestro todo
-filtrarTalleres("");
-cargarDatosFiltro("");
+//evento cuando apretas boton buscar
+/*document.getElementById("btnBuscar").onclick = function () {
+    crearMarcadores(buscador.value); //hay que cambiar el criterio, debe recibir array
+};*/
+
 
