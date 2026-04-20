@@ -70,3 +70,15 @@
   float: left;
 }
 
+.tarjeta.resaltada {
+  border: 1px solid rgb(15, 15, 31);
+  background-color: #7294b4;
+}
+
+.detalle {
+  display: none;
+}
+
+.tarjeta.expandida .detalle {
+  display: block;
+}
