@@ -16,7 +16,8 @@ const talleres = [
     { id: 6, nombre: "Luthier de guitarra", horario: "Lunes a Sabados <br> 8 a 17hs", direccion: "Dorrego 149", tel: "11-9988-7766", img:"https://www.guitarrasfuentes.com/wp-content/uploads/2021/12/que-es-un-luthier-de-guitarras-1536x1225.jpg", redes: "@Lutharra",coords: [-34.54353165038189, -58.68962795652001] },
     { id: 7, nombre: "Clases de dibujo", horario: "Miercoles 17 a 20hs", direccion: "Altube 4839", tel: "11-9988-7766",  img:"https://mencantapintar.com/wp-content/uploads/2024/12/WhatsApp-Image-2024-11-21-at-18.49.18-1-1024x771.jpeg",redes: "@dibuses",coords: [-34.527989, -58.707886] },
     { id: 8, nombre: "Clases de guitarra", horario: "Martes 21 a 22hs", direccion: "Concejal acosta 637", tel: "11-9988-7766", img:"https://www.guitarraguadalajara.com/wp-content/uploads/2020/02/228056019-md-1536x1025.jpeg",redes: "@guitana",coords: [-34.556901, -58.684664] },
-    { id: 9, nombre: "Clases de canto", horario: "Martes y Viernes 20 a 21hs", direccion: "Tte richieri 422", tel: "11-9988-7766", img:"https://elizabethdolinska.com/wp-content/uploads/2018/09/clases-de-canto-en-madrid-025.jpg", redes: "@Cantina",coords: [-34.550582502068444, -58.6969370517178] }
+    { id: 9, nombre: "Clases de canto", horario: "Martes y Viernes 20 a 21hs", direccion: "Tte richieri 422", tel: "11-9988-7766", img:"https://elizabethdolinska.com/wp-content/uploads/2018/09/clases-de-canto-en-madrid-025.jpg", redes: "@Cantina",coords: [-34.550582502068444, -58.6969370517178] },
+    {id: 10, nombre: "Centro cultural CCRP", horario: "Lunes a Sabados <br> 8 a 20hs", direccion: "M. Angel Delia 633", tel: "11-5558-7766", img:"https://www.ccamiami.org/el-centro/nuestra-historia/", redes: "@CentroCultural",coords: [-34.534327352041714, -58.71926631735072]} 
 ];
 
 var marcadoresEnPantalla = L.layerGroup().addTo(map);

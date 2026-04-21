@@ -66,18 +66,30 @@
             </div>
 
             <div class="campo">
-                <label for="campo_horario">Dirección</label>
+                <label for="campo_horario">Horario</label>
                 <textarea name="campo_horario" id="horario" rows="3"></textarea>
             </div>
 
-            <input type="checkbox" id="Captcha" name="Captcha" >
-            <label for="Captcha">No soy un Robot</label>
+            <div class="campo-checkbox">
+                <input type="checkbox" id="Captcha" name="Captcha">
+                <label for="Captcha">No soy un Robot</label>
+            </div>
 
             <input type="submit" value="Enviar Solicitud" id="btnFinalizar">
             <button type="button" id="btnVolver">Volver al Inicio</button>
-
-
         </form>
+        <div class="vista-previa-container">
+            <h3>Vista previa de tu taller:</h3>
+            <div id="preview-tarjeta" class="tarjeta">
+                <img src="https://via.placeholder.com/150" alt="Vista previa de foto" id="prev-img"
+                    style="width:100%; border-radius:8px; margin-bottom:10px;">
+                <h2 id="prev-nombre">Nombre del Espacio</h2>
+                <p><strong>Descripción:</strong> <span id="prev-descrip">...</span></p>
+                <p><strong>Horario:</strong> <span id="prev-horario">...</span></p>
+                <p><strong>Tel/Redes:</strong> <span id="prev-redes">...</span></p>
+                <p><strong>Direccion:</strong> <span id="prev-direc">...</span></p>
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>
