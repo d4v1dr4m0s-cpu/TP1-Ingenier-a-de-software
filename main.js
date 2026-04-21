@@ -71,5 +71,24 @@ document.addEventListener("DOMContentLoaded", function () {
         if (input) input.addEventListener("input", actualizarTextos);
     });
 
+    // --- LÓGICA SI ES SEDE CENTRO CULTURAL ---
+const checkboxSede = document.getElementById("es_sede");
+
+if (checkboxSede) {
+    checkboxSede.addEventListener("change", function() {
+        if (this.checked) {
+            // Establecemos la dirección fija
+            inputDirec.value = "M. Angel Delia 544 - Sede Centro Cultural";
+            // Bloqueamos la edición para que no la cambien
+            inputDirec.disabled = true;
+        } else {
+            // Limpiamos y desbloqueamos
+            inputDirec.value = "";
+            inputDirec.disabled = false;
+        }
+        // Actualizamos la tarjeta de vista previa
+        actualizarTextos(); 
+    });
+}
 
 });
