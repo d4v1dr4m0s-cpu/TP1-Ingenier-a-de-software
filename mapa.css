@@ -1,39 +1,52 @@
+#map {
+  height: 700px;
+  width: 100%;
+  margin: 20px;
+}
+
 .mapa-talleres {
-    display: flex;
+  display: flex;
 }
 
 .buscador-container {
-    display: flex;
-    background-color: white;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 450px;
 }
 
 #barra_buscador {
-    padding: 10px;
-    width: 350px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-#btnBuscar, .btn-volver {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+#btnBuscar,
+.btn-volver {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-#btnBuscar:hover, .btn-volver:hover {
-    background-color: #0056b3;
+#btnBuscar:hover,
+.btn-volver:hover {
+  background-color: #0056b3;
+}
+
+#boton_volver {
+  background-color: #6c757d;
+  color: white;
 }
 
 #lista-talleres {
@@ -48,8 +61,9 @@
   background: white;
   border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  width: 450px
 }
 
 .tarjeta h2 {

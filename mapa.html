@@ -17,14 +17,13 @@
             <div class="buscador-container">
                 <input type="text" id="barra_buscador" placeholder="Ingrese el taller o servicio (ej: guitarra)">
                 <button type="button" id="btnBuscar">Buscar</button>
-                <button type="button" onclick="window.location.href='home_logged.html'"
-                    style="background-color: #6c757d; color: white;">Volver</button>
+                <button type="button" id="boton_volver" onclick="window.location.href='home_logged.html'">Volver</button>
             </div>
             <ul id="lista-talleres"></ul>
         </div>
 
-        <div id="map" style="height: 700px; width: 100%; margin-top: 20px; margin-right: 20px; margin-left: 20px;"></div>
-        
+        <div id="map"></div>
+
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
