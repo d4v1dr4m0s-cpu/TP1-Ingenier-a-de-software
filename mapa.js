@@ -93,11 +93,11 @@ function crearTarjetas(listaFiltrada) {
             <div class="detalle">
             <img src="${taller.img}" style="width:100%; border-radius:5px;"><br>
             <p><strong>Descripción:</strong> ${taller.descripcion} <br></p>
-            <p><strong>Horario:</strong> ${taller.horario} <br></p>
             <p><strong>Telefono:</strong> ${taller.tel} <br></p>
             <p><strong>Redes:</strong> ${taller.redes} <br></p>     
             </div>
-        <p> <strong>Dirección:</strong> ${taller.direccion}</p>      
+        <p> <strong>Dirección:</strong> ${taller.direccion}</p> 
+        <p><strong>Horario:</strong> ${taller.horario} <br></p>     
         </div>
         `;
 

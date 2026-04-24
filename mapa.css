@@ -81,7 +81,10 @@
 }
 
 .talleres-container {
+  width: 700px;
   float: left;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .tarjeta.resaltada {
